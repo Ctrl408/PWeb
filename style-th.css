@@ -1,0 +1,94 @@
+@import "bourbon";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=UnifrakturCook:wght@700&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Gilda+Display|Oswald);
+
+p:first-of-type:first-letter {
+  height: 0.7em;
+  margin: 0.09em 0 -0.05em 0;
+  padding: 0 0.1em 0 0;
+  font-size: 5em;
+  line-height: 0.85em;
+  float: left;
+}
+
+  
+
+html { font-size: 62.5%; }
+
+body {
+  background: black;
+  font-family: 'Gilda Display', serif;
+  font-size: 2em;
+  line-height: 1.5;
+  color: white;
+}
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+.unifrakturcook-bold {
+  font-family: "UnifrakturCook", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+h1 {
+  position: relative;
+  top: -0.4em;
+  margin: 0 0 -0.3em;
+  font-weight: 400;
+  margin-top:82px;
+  font-size: 3em;
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+  font-family: "UnifrakturCook", cursive;
+}
+h2 {
+font-family: "UnifrakturCook", cursive;
+}
+
+
+    .quote-container {
+        background-color: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .quote-text {
+     
+        font-size: 22px;
+      
+        color: Grey;
+        margin-bottom: 10px;
+    }
+
+    .quote-author {
+        font-style: italic;
+        color: White;
+        font-size: 18px;
+
+    }
+
+p:first-of-type:not(quote-container):first-letter {
+  /* Your giant first letter styles here */
+  height: 0.7em;
+  margin: 0.09em 0 -0.05em 0;
+  padding: 0 0.1em 0 0;
+  font-size: 5.2em;
+  line-height: 0.85em;
+  float: left;
+}
+
+.my-image-style {
+  /* Add your desired styles here */
+  border: 2px ; /* Example: add a red border */
+  width: 300px; /* Example: set a width */
+  /* Add more styles as needed (margin, padding, etc.) */
+}

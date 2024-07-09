@@ -1,0 +1,177 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', sans-serif; /* Specify a fallback font */
+}
+
+html {
+  background: #111;
+  padding: 1em; 
+  font-family: 'Press Start 2P', system-ui;
+  color: #eee;
+  font-size: .6em;
+  line-height: 2.5;
+  text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+  letter-spacing: 0.125em;
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
+
+@-webkit-keyframes jerkwhole {
+  30% {
+  }
+  40% {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(1, 1);
+    -webkit-transform: skew(0, 0);
+  }
+  41% {
+    opacity: 0.8;
+    top: 0px;
+    left: -100px;
+    -webkit-transform: scale(1, 1.2);
+    -webkit-transform: skew(50deg, 0);
+  }
+  42% {
+    opacity: 0.8;
+    top: 0px;
+    left: 100px;
+    -webkit-transform: scale(1, 1.2);
+    -webkit-transform: skew(-60deg, 0);
+  }
+  43% {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(1, 1);
+    -webkit-transform: skew(0, 0);
+  }
+  65% {
+  }
+}
+
+.scanlines {
+}
+
+.container {
+  opacity: 0;
+  width: 500px;
+  height: 300px;
+  width: 90%; /* Change width to percentage */
+  max-width: 500px; /* Add max-width to limit container size */
+  border: 2px solid #666;
+  padding: 10px;
+  overflow: hidden;
+  animation: turn-on 5s linear 2s 1 normal, turn-off 0.55s linear 15s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+.text {
+  -webkit-animation: jerkwhole 5s infinite;
+  position: relative;
+  font-family: "Press Start 2P", system-ui;
+}
+
+@keyframes turn-on {
+  0% {
+    transform: scale(1, 0.8) translate3d(0, 0, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 1;
+  }
+  3.5% {
+    transform: scale(1, 0.8) translate3d(0, 100%, 0);
+  }
+
+  3.6% {
+    transform: scale(1, 0.8) translate3d(0, -100%, 0);
+    opacity: 1;
+  }
+
+  9% {
+    transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 0;
+  }
+
+  11% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(0) brightness(0);
+    filter: contrast(0) brightness(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(1) brightness(1.2) saturate(1.3);
+    filter: contrast(1) brightness(1.2) saturate(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes turn-off {
+  0% {
+    transform: scale(1, 1.3) translate3d(0, 0, 0);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.3, 0.001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(10);
+    filter: brightness(10);
+  }
+  100% {
+    animation-timing-function: $ease-in-quint;
+    transform: scale(0.000, 0.0001) translate3d(0, 0, 0);
+    -webkit-filter: brightness(50);
+    filter: brightness(50);
+  }
+}
+
+.container::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+.container::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}

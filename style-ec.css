@@ -1,0 +1,64 @@
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Gilda+Display|Oswald);
+
+p:first-of-type:first-letter {
+  height: 0.7em;
+  margin: 0.09em 0 -0.05em 0;
+  padding: 0 0.1em 0 0;
+  font-size: 5em;
+  line-height: 0.85em;
+  float: left;
+}
+
+
+
+html { font-size: 62.5%; }
+
+body {
+  background: black;
+  font-family: 'Gilda Display', serif;
+  font-size: 2em;
+  line-height: 1.5;
+  color: white;
+}
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+h1 {
+  position: relative;
+  top: -0.4em;
+  margin: 0 0 -0.3em;
+  font-family: 'Oswald', helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-size: 8em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+
+    .quote-container {
+        background-color: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .quote-text {
+        font-size: 16px;
+        color: White;
+        margin-bottom: 10px;
+    }
+
+    .quote-author {
+        font-style: italic;
+        color: White;
+        font-size: 16px;
+
+    }
